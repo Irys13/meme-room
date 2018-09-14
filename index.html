@@ -1,0 +1,25 @@
+<!DOCTYPE>
+<html>
+<head>
+	<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+	<meta content="utf-8" http-equiv="encoding">
+</head>
+<body>
+<h1>The meme room</h1>
+<img id="ligtBulb" src="images/off.png">
+<button type="button" value="off" id="switch-button" onclick="switch_boolean()"> Button </button>
+<script>
+
+function switch_boolean() {
+var switch_boolean = document.getElementById("switch-button");
+	if (switch_boolean.value == "off") {
+		document.getElementById("ligtBulb").src="images/off.png";
+		switch_boolean.value = "on";
+	} else {
+		document.getElementById("ligtBulb").src="images/on.png";
+		switch_boolean.value = "on";
+	}
+}
+</script>
+</body>
+</html>
