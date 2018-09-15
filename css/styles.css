@@ -1,0 +1,24 @@
+body {
+
+}
+
+#content {
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	padding: 0 0 2% 0;
+}
+
+button {
+	height: 100px;
+	width: 100px;
+	background-color: purple;
+	border: none;
+	border-radius: 50%;
+}
+
+.button:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
