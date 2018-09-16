@@ -6,25 +6,49 @@
 	<link rel="stylesheet" type="text/css" href="css/styles.css">
 </head>
 <body>
+
 <h1>The meme room</h1>
 <div id="content"  style="text-align: center; margin: 0 auto;">
 	<img id="ligtBulb" src="images/on.png" style="text-align: center; margin: 0 auto;"></br>
-	<button type="button" value="off" id="switch-button" onclick="switch_boolean()">  </button></div>
+	<button type="button" value="initial" id="switch-button" onclick="switch_boolean()">  </button></div>
 
 <script>
-
 function switch_boolean() {
-var switch_boolean = document.getElementById("switch-button");
-	if (switch_boolean.value == "off") {
-		document.getElementById("ligtBulb").src="images/off.png";
-		document.body.style.background= "black";
+	var switch_boolean = document.getElementById("switch-button");
+	if (switch_boolean.value == "off" || switch_boolean.value == "initial") {
+		document.getElementById("ligtBulb").src = "images/off.png";
+		document.body.style.background = "black";
 		switch_boolean.value = "on";
 	} else {
-		document.getElementById("ligtBulb").src="images/on.png";
-		document.body.style.background= "white";
+		document.getElementById("ligtBulb").src = "images/on.png";
+		document.body.style.background = "white";
 		switch_boolean.value = "off";
 		}
 }
+// function meme_room () { 
+	// if (switch_boolean.value == "off") {	 <- for some reason it doesnt work even if I add function. I have to figure out something else
+		function idleCatcher() {
+			var timer_time;
+			window.onload = resetTimer;
+			window.onmousemove = resetTimer;
+			window.onmousedown = resetTimer;  // catches touchscreen presses as well      
+			window.ontouchstart = resetTimer; // catches touchscreen swipes as well 
+			window.onclick = resetTimer;      // catches touchpad clicks as well
+			window.onkeypress = resetTimer;   
+			window.addEventListener('scroll', resetTimer, true); // improved; see comments
+
+			function meme() {
+			   alert("The timer works, you are cool");
+			}
+
+			function resetTimer() {
+				clearTimeout(timer_time);
+				timer_time = setTimeout(meme, 3000);  // time is in milliseconds
+			}
+		}
+		idleCatcher();
+	//}
+// }
 </script>
 </body>
 </html>
