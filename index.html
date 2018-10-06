@@ -1,112 +1,30 @@
 <!DOCTYPE>
 <html>
 <head>
-	<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
-	<meta content="utf-8" http-equiv="encoding">
-	<link rel="stylesheet" type="text/css" href="css/styles.css">
+	<title>>The meme room</title>
+    <link href="CSS/main.css" rel="stylesheet" type="text/css" />
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:300" rel="stylesheet"> 
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+	<!-- Latest compiled JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 		
 </head>
 <body>
+	<h1 style="text-align: center; color: black;">The meme room</h1>
+	
+	<p style="font-size: 1px;">Some text here</p>
 
-<h1>The meme room</h1>
-<div id="content"  style="text-align: center; margin: 0 auto;">
-	<img id="ligtBulb" src="images/on.png" style="text-align: center; margin: 0 auto;"></br>
-	<button type="button" value="initial" id="switch-button" onclick="switch_boolean()">  </button></div>
-<div class="youtube" id="LcIytqkbdlo" style="width:560px; height: 315px;">
-</div>
+		<img class="light-bulb" src="images/on.png">
+		<button class="light-switch" value="initial" style="border: none; width: 50px; height: 50px; background-color: purple;">Press me</button>
+		<span id="timer" style="color: black;"></span>
 
-<div class="youtube" id="_Jmisv1Spck" style="width:560px; height: 315px;">
-</div>
 
-<!-- Include the JavaScript only once -->
- 
-<!--............................................................................................................................................-->
-
-<script>
-// ...::: Function for light bulb button :::...
-function switch_boolean() {
-	var switch_boolean = document.getElementById("switch-button");
-	if (switch_boolean.value == "off" || switch_boolean.value == "initial") { // ...::: Turns off light bulb and sets switch to 'on' :::...
-		document.getElementById("ligtBulb").src = "images/off.png";
-		document.body.style.background = "black";
-		switch_boolean.value = "on";
-	} else { // ...::: Turns on light bulb and sets switch to "off" :::...
-		document.getElementById("ligtBulb").src = "images/on.png";
-		document.body.style.background = "white";
-		switch_boolean.value = "off";
-		}
-}
-
-// ...::: Notices idle time :::...
-function idleCatcher() {
-	var timer_time;
-	window.onload = resetTimer;
-	window.onmousemove = resetTimer;
-	window.onmousedown = resetTimer;  // ...::: catches touchscreen presses as well :::...     
-	window.ontouchstart = resetTimer; // ...::: catches touchscreen swipes as well :::... 
-	window.onclick = resetTimer;      // ...::: catches touchpad clicks as well :::...
-	window.onkeypress = resetTimer;   
-	window.addEventListener('scroll', resetTimer, true); 
-
-	// ...::: Function which means to happen when timer runs out :::...
-	function meme() {
-		if (switch_boolean.value = "on") {
-			<!-- You can embed  multiple Youtube videos on a page -->
-/* ...........:::::::::::::::::::: I have too bad headache I'll sort it tomorrow :::::::::::::::::::.......................
-
-// Find all the YouTube video embedded on a page
-var videos = document.getElementsByClassName("youtube"); 
-
-for (var i=0; i<videos.length; i++) {
-  
-  var youtube = videos[i];
-  
-  // Based on the YouTube ID, we can easily find the thumbnail image
-  var img = document.createElement("img");
-  img.setAttribute("src", "http://i.ytimg.com/vi/" 
-                          + youtube.id + "/hqdefault.jpg");
-  img.setAttribute("class", "thumb");
-  
-
-  // Overlay the Play icon to make it look like a video player
-  var circle = document.createElement("div");
-  circle.setAttribute("class","circle");  
-  
-  youtube.appendChild(img);
-  youtube.appendChild(circle);
-  
-  // Attach an onclick event to the YouTube Thumbnail
-  youtube.onclick = function() {
-
-    // Create an iFrame with autoplay set to true
-    var iframe = document.createElement("iframe");
-    iframe.setAttribute("src",
-          "https://www.youtube.com/embed/" + this.id 
-        + "?autoplay=1&autohide=1&border=0&wmode=opaque&enablejsapi=1"); 
-    
-    // The height and width of the iFrame should be the same as parent
-    iframe.style.width  = this.style.width;
-    iframe.style.height = this.style.height;
-       
-    // Replace the YouTube thumbnail with YouTube HTML5 Player
-    this.parentNode.replaceChild(iframe, this);
-
-  }; 
-}*/
-
-			alert("The timer works, you are cool");
-		}
-	}
-
-	// ...::: Timer :::...
-	function resetTimer() {
-		clearTimeout(timer_time);
-		timer_time = setTimeout(meme, 3000);  // ...::: time is in milliseconds :::...
-	}
-}
-idleCatcher();
-
-</script>
-
-<!--.............................................................................................................................................-->
 </body>
 </html>
